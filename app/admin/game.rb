@@ -1,9 +1,9 @@
-ActiveAdmin.register User do
+ActiveAdmin.register Game do
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :email, :password
+permit_params :name, :sport_type_id, :event_id
 #
 # or
 #

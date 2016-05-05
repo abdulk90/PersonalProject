@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160505004615) do
+ActiveRecord::Schema.define(version: 20160505014627) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,57 @@ ActiveRecord::Schema.define(version: 20160505004615) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "events", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "game_associations", force: :cascade do |t|
+    t.integer  "team_id"
+    t.string   "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "game_associations", ["game_id"], name: "index_game_associations_on_game_id", using: :btree
+  add_index "game_associations", ["team_id"], name: "index_game_associations_on_team_id", using: :btree
+
+  create_table "games", force: :cascade do |t|
+    t.integer  "sport_type_id"
+    t.integer  "event_id"
+    t.string   "name"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "games", ["event_id"], name: "index_games_on_event_id", using: :btree
+  add_index "games", ["sport_type_id"], name: "index_games_on_sport_type_id", using: :btree
+
+  create_table "sport_types", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string   "name",       default: "TeamA"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  create_table "user_profiles", force: :cascade do |t|
+    t.integer  "team_id"
+    t.integer  "user_id"
+    t.string   "name",       default: "Abdul"
+    t.string   "number",     default: "1234567890"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+  end
+
+  add_index "user_profiles", ["team_id"], name: "index_user_profiles_on_team_id", using: :btree
+  add_index "user_profiles", ["user_id"], name: "index_user_profiles_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
