@@ -1,0 +1,21 @@
+<div class="jumbotron center">
+  <h1><%= @team.name %></h1>
+  <p></p>
+  <p><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">View Player</button></p>
+</div>
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+    	<ul class="list-unstyled center">
+			<% @team.players.each do |player| %>
+				<li>
+					<%= player.name  %>
+				</li>
+			
+
+			<% end %>
+    	</ul>
+    </div>
+  </div>
+</div>

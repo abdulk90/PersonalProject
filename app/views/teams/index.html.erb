@@ -12,12 +12,12 @@
 <div class"container">
 	<div class="row">
   		<div class="col-md-4"></div>
-  		<div class="col-md-4">
+  		<div class="col-md-4 center">
 
 	<% @teams.each do |team| %>
  
-	<img src="http://a.deviantart.net/avatars/k/i/kiwi-cupcake.gif?10">
-	<u><a class="btn btn-default" href="/team/<%= team.id %>" role="button"><%= team.name %></a></u>
+
+	<u><a class="btn btn-default" href="<%= team_path team.id%>" role="button"><%= team.name %></a></u>
 	<br><br>
 
 

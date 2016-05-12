@@ -10,7 +10,11 @@ Rails.application.routes.draw do
 
   get '/media', to: 'site#media'
 
-  get '/teams/index', to: 'teams#index'
+
+
+  resources :games
+
+  resources :teams
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
