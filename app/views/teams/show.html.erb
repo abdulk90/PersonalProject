@@ -10,7 +10,7 @@
 
   <% if !@team.players.any? {|profile| profile.id == current_user.user_profile.id} %>
 
-  <%= link_to "Join Team", '/teams/join_team/' + @team.id.to_s, class: "btn btn-primary", data: { confirm: "Are you sure you would like to join this team?  If you are on another team, this WILL remove you from that roster." } %>
+  <%= link_to "Join Team", '/teams/join_team/' + @team.id.to_s, class: "btn btn-success", data: { confirm: "Are you sure you would like to join this team?  If you are on another team, this WILL remove you from that roster." } %>
   
   <% end %>
   </p>
