@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   get '/media', to: 'site#media'
 
-
+  get '/teams/join_team/:team_id', to: 'teams#join_team'
 
   resources :games
 

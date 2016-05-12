@@ -1,7 +1,19 @@
 <div class="jumbotron center">
+  
+  <% if @team.players.any? {|profile| profile.id == current_user.user_profile.id} %>
+    
+    <span class="label label-danger pull-right">My Team</span>
+
+  <% end %>
   <h1><%= @team.name %></h1>
-  <p></p>
-  <p><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">View Player</button></p>
+  <p><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">View Player</button>
+
+  <% if !@team.players.any? {|profile| profile.id == current_user.user_profile.id} %>
+
+  <%= link_to "Join Team", '/teams/join_team/' + @team.id.to_s, class: "btn btn-primary", data: { confirm: "Are you sure you would like to join this team?  If you are on another team, this WILL remove you from that roster." } %>
+  
+  <% end %>
+  </p>
 </div>
 
 <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">

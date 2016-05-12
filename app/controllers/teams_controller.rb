@@ -1,4 +1,5 @@
 class TeamsController < ApplicationController
+	before_action :authenticate_user!
 
 	def index
 
@@ -15,6 +16,10 @@ class TeamsController < ApplicationController
 
 	def new
 
+		if current_user && current_user.user_profile && current_user.user_profile.team
+			redirect_to(team_path current_user.user_profile.team.id)
+		end
+
 		@team = Team.new	
 
 	end
@@ -22,13 +27,31 @@ class TeamsController < ApplicationController
 	def create
 
 		new_team = Team.new(team_params)
+
 		if new_team.save
+
+			current_user.user_profile.team_id=new_team.id
+
+			current_user.user_profile.save
+
 			redirect_to team_path(new_team.id)
 
 		else
 			redirect_to(new_team_path)
 				# add error
 		end
+
+	end
+
+	def join_team
+
+		team = Team.find_by_id(params[:team_id])
+
+		current_user.user_profile.team_id = team.id
+
+		current_user.user_profile.save
+
+		redirect_to team_path(team.id)
 
 	end
 
