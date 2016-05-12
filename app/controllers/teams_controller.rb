@@ -19,6 +19,19 @@ class TeamsController < ApplicationController
 
 	end
 
+	def create
+
+		new_team = Team.new(team_params)
+		if new_team.save
+			redirect_to team_path(new_team.id)
+
+		else
+			redirect_to(new_team_path)
+				# add error
+		end
+
+	end
+
 	private
 
 	def team_params

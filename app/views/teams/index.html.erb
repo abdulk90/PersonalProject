@@ -14,6 +14,13 @@
   		<div class="col-md-4"></div>
   		<div class="col-md-4 center">
 
+	<% if @teams.count == 0 %>
+	
+	    <%= link_to "Create Team", new_team_path, :class => "btn btn-danger"  %>
+
+	<% end %>
+
+
 	<% @teams.each do |team| %>
  
 
