@@ -1,4 +1,14 @@
 <div class="jumbotron center">
+
+<div class="row">
+  <div class="col-xs-6 col-md-3">
+    <div class="thumbnail">
+      
+      <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/8185-200.png" alt="...">
+    
+    </div>
+  </div>
+
   
   <% if @team.players.any? {|profile| profile.id == current_user.user_profile.id} %>
     
@@ -15,7 +25,7 @@
   <% end %>
   </p>
 </div>
-
+</div>
 <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
