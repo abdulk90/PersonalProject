@@ -6,7 +6,16 @@ If you are creating a new tea, you will AUTOMATICALLY join the roster
  <%= f.label :team_name %>:
 
  <%= f.text_field :name %><br />
-
+ 
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+    <% if f.object.image? %>
+      <%= image_tag f.object.image.thumb.url %>
+      <%= f.label :remove_image %>
+      <%= f.check_box :remove_image %> 
+    <% end %>
+  </div>
 
  <%= f.submit %>
 <% end %>

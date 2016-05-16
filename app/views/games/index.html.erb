@@ -1,13 +1,11 @@
 <div class="container">
 <% @sport_types.each do |type| %>
-
-<div class="panel panel-default sport-type-panel">
-  <div class="panel-heading">
-    <h3 class="panel-title center"><%= type.name %></h3>
-  </div>
-  <div class="panel-body">
-    <%= type.description %>
-  </div>
+<div class="sport_type_section clearfix">
+	<img src="<%= type.url %>" width='100vh' height='100vh' class="sport_type_image col-xs-12 col-md-4">
+	<div class="sport_type_data col-xs-12 col-md-8">
+		<h3 class="sport_type_heading"><%= type.name %></h3>
+		<p class="sport_type_desc"><%= type.description %></p>		
+	</div>
 </div>
   <% end %>
 </div>

@@ -1,37 +1,24 @@
-
-
-
 <div class"container">
-	
-
-<h3 class="hborder" align=center>Click on the Team for more detail!</h3>
-<br>
-		</div>
-	</div>
-</div>
+	<h3 class="hborder" align=center>Click on the Team for more detail!</h3>
 	<ul>
-<div class"container">
-	<div class="row">
-  		<div class="col-md-4"></div>
-  		<div class="col-md-4 center">
-
-	<% if @teams.count == 0 %>
-	
-	    <%= link_to "Create Team", new_team_path, :class => "btn btn-danger"  %>
-
-	<% end %>
-
-
-	<% @teams.each do |team| %>
- 
-
-	<u><a class="btn btn-default" href="<%= team_path team.id%>" role="button"><%= team.name %></a></u>
-	<br><br>
-
-
-	<% end %>
+		<div class="row">
+	  		<div class="col-xs-12 center">
+		<% if @teams.count == 0 %>
+		    <%= link_to "Create Team", new_team_path, :class => "btn btn-danger"  %>
+		<% else %>
+			<% @teams.each do |team| %>
+				<div class="col-xs-12 col-md-4">
+					<%= p team.image %>
+					 <% if team.image? %>
+					      <%= image_tag team.image.thumb %>
+					<% end %>
+					<div class="view">
+						<a class="btn btn-default" href="<%= team_path team.id%>" role="button"><%= team.name %></a>
+					</div>
+				</div>
+			<% end %>
+		<% end %>
+			</div>
 		</div>
-	</div>
-</div>
 	</ul>
-
+</div>

@@ -18,8 +18,16 @@ class TeamsController < ApplicationController
 
 	def edit
 
-		@team = Team.find_by_id(current_user.user_profile.id)
+		@team = Team.find_by_id(params[:id])
 
+	end
+	def update
+		team = Team.find_by_id(params[:id])
+		if team.update(team_params)
+			redirect_to teams_path
+		else
+			redirect_to edit_team_path(team.id)
+		end
 	end
 
 	def new
