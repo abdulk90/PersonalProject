@@ -10,6 +10,7 @@ class TeamsController < ApplicationController
 	def show
 
 		@team = Team.find(params[:id])
+	
 
 
 	end
@@ -62,7 +63,7 @@ class TeamsController < ApplicationController
 
 	def team_params
 
-		params.require(:team).permit(:name)
+		params.require(:team).permit(:name, :image)
 		
 	end
 

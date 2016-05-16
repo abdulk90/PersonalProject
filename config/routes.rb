@@ -8,8 +8,6 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root :to => 'site#index'
 
-  get '/media', to: 'site#media'
-
   get '/teams/join_team/:team_id', to: 'teams#join_team'
 
   resources :games
@@ -17,6 +15,8 @@ Rails.application.routes.draw do
   resources :teams
 
   resources :user_profiles
+
+  resources :events
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
