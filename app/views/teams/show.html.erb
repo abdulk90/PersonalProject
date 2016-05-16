@@ -10,7 +10,7 @@
   </div>
 
   
-  <% if @team.players.any? {|profile| profile.id == current_user.user_profile.id} %>
+  <% if @team.players.any? {|profile| profile.id === current_user.user_profile.id} %>
     
     <span class="label label-danger pull-right">My Team</span>
 
@@ -18,8 +18,11 @@
   <h1><%= @team.name %></h1>
   <p><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">View Player</button>
 
-  <% if current_user.team === @team.name %>
-  <p><%= link_to "Edit Team", edit_team_profile_path(@team.id)  %></p>
+  <% if @user_team === @team.name %>
+
+  <% else %>
+
+  <p><%= link_to "Edit Team", edit_team_path(@team.id)  %></p>
   <% end %> 
 
   <% if !@team.players.any? {|profile| profile.id == current_user.user_profile.id} %>

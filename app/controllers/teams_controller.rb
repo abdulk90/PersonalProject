@@ -10,8 +10,15 @@ class TeamsController < ApplicationController
 	def show
 
 		@team = Team.find(params[:id])
+		@user_team = UserProfile.find_by_team_id(current_user.user_profile.team_id)
 	
 
+
+	end
+
+	def edit
+
+		@team = Team.find_by_id(current_user.user_profile.id)
 
 	end
 
