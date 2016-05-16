@@ -3,7 +3,9 @@ class UserProfilesController < ApplicationController
 
 	def show
 
-		@user_profile = UserProfile.find_by_id(current_user.user_profile.id)
+		# @user_profile = UserProfile.find_by_id(current_user.user_profile.id)
+		@user_profile = UserProfile.find_by_id(params[:id])
+
 
 	end
 

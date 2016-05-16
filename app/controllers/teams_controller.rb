@@ -16,8 +16,11 @@ class TeamsController < ApplicationController
 
 	def new
 
+		#will not allow user to create a new team, if already in one
+
 		if current_user && current_user.user_profile && current_user.user_profile.team
 			redirect_to(team_path current_user.user_profile.team.id)
+
 		end
 
 		@team = Team.new	

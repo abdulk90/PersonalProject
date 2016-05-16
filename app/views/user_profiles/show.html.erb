@@ -10,7 +10,7 @@
 
 
 <% if %>
-  <% @user_profile === current_user.id %>
+  <% @user_profile.id === current_user.id %>
   </div>
   <div class="media-body">
     <h1 class="media-heading">Welcome <%= @user_profile.name   %> !</h1>
@@ -24,7 +24,7 @@
     <h1 class="media-heading"><%= @user_profile.name   %>'s Profile</h1>
     <h2>Phone Number on recond: <%= @user_profile.number  %></h2>
     <h5>About <%=@user_profile.name  %>: <%= @user_profile.description  %></h5> !!!
-    <p><%= link_to "Edit Profile", edit_user_profile_path(@user_profile.id)  %></p>    
+  
 
   </div>
 <% end %>
