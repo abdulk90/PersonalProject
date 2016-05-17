@@ -7,15 +7,14 @@
 		    <%= link_to "Create Team", new_team_path, :class => "btn btn-danger"  %>
 		<% else %>
 			<% @teams.each do |team| %>
-				<div class="col-xs-12 col-md-4">
-					<%= p team.image %>
-					 <% if team.image? %>
-					      <%= image_tag team.image.thumb %>
-					<% end %>
-					<div class="view">
-						<a class="btn btn-default" href="<%= team_path team.id%>" role="button"><%= team.name %></a>
+				<a href="<%= team_path team.id%>" role="button" class='team_link'>
+					<div class="col-xs-12 col-md-3 team_view">
+						 <% if team.image? %>
+					      <%= image_tag team.image.thumb, class: 'img-responsive center-block' %>
+						<% end %>
+					<p><%= team.name %></p> 
 					</div>
-				</div>
+				</a>
 			<% end %>
 		<% end %>
 			</div>
