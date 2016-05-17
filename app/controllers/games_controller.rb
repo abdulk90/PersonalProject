@@ -7,8 +7,23 @@ class GamesController < ApplicationController
 
 	def show
 
-		@my_sport_types = SportType.find(params[:id])
+		@game = Game.find_by_id(params[:id])
 		
+	end
+
+	def join_game
+		team = Team.find_by_id(params[:team_id])
+		game = Game.find_by_id(params[:game_id])
+		new_game_assoc = GameAssociation.new()
+		new_game_assoc.team_id = team.id
+		new_game_assoc.game_id = game.id
+
+		if new_game_assoc.save
+			redirect_to game_path(game.id)
+		else
+			redirect_to event_path(game.event.id)
+		end
+
 	end
 
 end

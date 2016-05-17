@@ -1,5 +1,17 @@
+<div class="jumbotron col-xs-12 col-sm-5">
+	<div class="media-body">
+    	<h1 class="media-heading"><%= @event.name   %></h1>
+    	<h4><%= @event.date_time  %></h4>
+    	<h5><%=@event.location  %></h5>  
+	</div>
+</div>
 
-  <div class="media-body">
-    <h1 class="media-heading"><%= @my_event.name   %></h1>
-    <h2><%= @my_event.date_time  %></h2>
-    <h5><%=@my_event.location  %></h5> !!!  
+<div class="jumbotron col-xs-12 col-sm-offset-2 col-sm-5">
+	<ul class="list-unstyled">
+		<% @event.games.each do |game| %>
+
+		<li><%= link_to game.name, game_path(game.id)  %></li>
+
+		<% end %>
+	</ul>
+</div>

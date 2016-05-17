@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   resources :events
 
+  get '/join_game/:game_id/:team_id', to: 'games#join_game', as: :join_game
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -10,9 +10,13 @@ class TeamsController < ApplicationController
 	def show
 
 		@team = Team.find(params[:id])
-		@user_team = UserProfile.find_by_team_id(current_user.user_profile.team_id)
-	
+			
+		@upcoming_games = []
+			@team.games.limit(6).each do |game|
+				@upcoming_games.push(game)
+			end
 
+		@user_team = UserProfile.find_by_team_id(current_user.user_profile.team_id)
 
 	end
 

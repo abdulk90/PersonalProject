@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 20160516231559) do
 
   create_table "game_associations", force: :cascade do |t|
     t.integer  "team_id"
-    t.string   "game_id"
+    t.integer  "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(version: 20160516231559) do
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.string   "image"
+    t.integer  "creator_id"
   end
 
   create_table "user_profiles", force: :cascade do |t|
