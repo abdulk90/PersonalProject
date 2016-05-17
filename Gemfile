@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+gem "fog"
+
+gem 'figaro'
+
 gem 'devise'
 
 gem 'twitter-bootstrap-rails'
