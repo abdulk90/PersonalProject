@@ -1,22 +1,29 @@
 // Place all the styles related to the teams controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
- 
- .team_view {
-	border: lightgrey 1px solid;
-	padding: 5px;
-	opacity: 0.7;
-	border-radius: 5px;
-	box-shadow: 0 0px 5px 1px;
-	-webkit-transition: opacity 1s, border 1s, box-shadow 1s;
-    transition: opacity 1s, border 1s, box-shadow 1s;
-    margin: 2%;
- }
- .team_view:hover {
- 	opacity: 1;
- 	border: darkgrey 1px solid;
- 	box-shadow: 0px 10px 25px 10px;
- }
 
- .team_view a {
- }
+.team_view {
+	border: lightgrey 1px solid;
+	paddin: 5px;
+	opacity: 0.7;
+	-webkit-transition: opacity 1s;
+    transition: opacity 1s, border 1s;
+}
+
+.team_view:hover {
+	opacity: 1;
+	border: darkgrey;
+}
+
+.team_view a {
+	bottom: 0;
+
+}
+
+.jumbotron {
+    padding-left: 60px;
+    padding-right: 60px;
+    background-color: #DEB8A0;
+    box-shadow: 0 0 0 1px #a27b62;
+    background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0));
+}
