@@ -1,6 +1,14 @@
-<% @events.each do |event| %>
+
+
+<div class="jumbotron col-xs-12 col-sm-offset- col-sm-5">
+	<ul class="list-unstyled centered">
 	<div>
+		
+		<% @events.each do |event| %>
 		<%= event.name %>
 		<%= link_to event.name, event_path(event.id)  %>
+		<% end %>
 	</div>
-<% end %>
+
+	</ul>
+</div>
