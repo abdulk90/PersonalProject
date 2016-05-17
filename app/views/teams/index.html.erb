@@ -8,7 +8,7 @@
 		<% else %>
 			<% @teams.each do |team| %>
 				<a href="<%= team_path team.id%>" role="button" class='team_link'>
-					<div class="col-xs-12 col-md-3 team_view">
+					<div class="col-xs-12 col-md-3 team_view center">
 						 <% if team.image? %>
 					      <%= image_tag team.image.thumb, class: 'img-responsive center-block' %>
 						<% end %>
