@@ -5,7 +5,7 @@ Event.create!([
   {name: "Kickoff Frisbee", date_time: "2016-05-28 12:30:00", location: "Holiday Park"},
   {name: "Kickoff Dodgeball", date_time: "2016-05-23 12:00:00", location: "Hagen Park"},
   {name: "Kickoff Kickball", date_time: "2016-05-26 12:00:00", location: "Wimberly Park"},
-  {name: "Weekly Frisbee Tournament", date_time: "2016-05-30 14:00:00", location: "Oswald Park"}
+  {name: "Weekly Frisbee Tournament", date_time: "2016-05-30 14:00:00", location: "Oswald Park"},
   {name: "Weekly Dodgeball Tournament", date_time: "2016-05-30 12:00:00", location: "Hagen Park"},
 ])
 Game.create!([
@@ -22,11 +22,11 @@ Game.create!([
 ])
 SportType.create!([
   {name: "Ultimate Frisbee", description: "Ultimate, originally known as ultimate frisbee, is a non-contact team sport originally played by players with a flying disc, flung by players. Points are scored by passing the disc to a teammate in the opposing end zone. Other basic rules are that players must not take steps while holding the disc, and interceptions, incomplete passes, and passes out of bounds are turnovers. Rain, wind, or occasionally other adversities can make for a testing match with rapid turnovers, heightening the pressure of play.", url: "https://www.montclair.edu/media/montclairedu/campusrecreation/im/evenmorefrisbee.jpg"},
-  {name: "Dodgeball", description: "Dodgeball is a game in which players on two teams try to throw balls at each other while avoiding being hit themselves. In North America, the game is typically played among children 6-12 in elementary school. However, internationally, the sport has also emerged as a popular middle school, high school and college sport and in some countries Universities also play the sport. It is also popular in informal settings and is often played on a playground, community or in organized recreational leagues.", url: "http://s3.amazonaws.com/assetsawardsco/1/12/kickball_banner.jpg?446737"},
-  {name: "Kickball", description: "Kickball is a playground game and league game, similar to baseball, invented in the United States in the first half of the 20th century. As in baseball, one team tries to score by having its players return a ball from home base to the field and then circle the bases; while the other team tries to stop them by tagging them \"out\" with the ball before they can return to the home base. Instead of hitting a small, hard ball with a bat, players kick a large inflated rubber ball; this makes it more accessible to young children.", url: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Dodgeball.jpg"}
+  {name: "Dodgeball", description: "Dodgeball is a game in which players on two teams try to throw balls at each other while avoiding being hit themselves. In North America, the game is typically played among children 6-12 in elementary school. However, internationally, the sport has also emerged as a popular middle school, high school and college sport and in some countries Universities also play the sport. It is also popular in informal settings and is often played on a playground, community or in organized recreational leagues.", url: "http://www.socialsneaker.com/wp-content/uploads/2014/06/dodgeball.jpg"},
+  {name: "Kickball", description: "Kickball is a playground game and league game, similar to baseball, invented in the United States in the first half of the 20th century. As in baseball, one team tries to score by having its players return a ball from home base to the field and then circle the bases; while the other team tries to stop them by tagging them \"out\" with the ball before they can return to the home base. Instead of hitting a small, hard ball with a bat, players kick a large inflated rubber ball; this makes it more accessible to young children.", url: "http://www.myteamsports.net/prd/upload/general/images/org5osp72img_sport72.jpg"}
 ])
 Team.create!([
-  {name: "Thundercats", image: "http://freevectorlogo.net/wp-content/uploads/2013/05/thundercats-emblem-vector-logo-200x200.png", creator_id: 1},
+  {name: "Thundercats", image: "thunder.png", creator_id: 1},
   {name: "Wolverines", image:  "http://lakelandchiropractic.ca/wp-content/uploads/2012/03/PtbWolverines1.jpg", creator_id: 1},
   {name: "Avengers", image:  "http://as1.wdpromedia.com/media/rundisney/global/events/AvengersIcon-01.png", creator_id: 1},
   {name: "Tigers", image:  "http://www.vector-logo.net/logo_preview/eps/p/Pacific_Tigers(26).png", creator_id: 1},
