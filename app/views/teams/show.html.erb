@@ -57,7 +57,7 @@
     	<ul class="list-unstyled center">
 			<% @team.players.each do |player| %>
 				<li>
-					<%= player.name  %>
+					<a href="/user_profiles/<%=player.id %>"><%= player.name  %></a>
 				</li>
 			
 

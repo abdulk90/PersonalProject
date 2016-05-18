@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+	
 	def index
 
 		@sport_types = SportType.order(created_at: :DESC)
@@ -8,6 +9,7 @@ class GamesController < ApplicationController
 	def show
 
 		@game = Game.find_by_id(params[:id])
+
 		
 	end
 
@@ -19,7 +21,7 @@ class GamesController < ApplicationController
 		new_game_assoc.game_id = game.id
 
 		if new_game_assoc.save
-			redirect_to game_path(game.id)
+			redirect_to "/events"
 		else
 			redirect_to event_path(game.event.id)
 		end

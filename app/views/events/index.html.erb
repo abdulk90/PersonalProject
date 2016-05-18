@@ -5,8 +5,8 @@
 	<div>
 		
 		<% @events.each do |event| %>
-		<%= event.name %>
-		<%= link_to event.name, event_path(event.id)  %>
+
+		<li><%= link_to event.name, event_path(event.id)  %></li>
 		<% end %>
 	</div>
 
