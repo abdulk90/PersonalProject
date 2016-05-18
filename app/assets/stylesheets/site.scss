@@ -4,14 +4,21 @@
 
 .box {
     height: 100%;
+
 	background-color: lightgrey;
 	border: black;
 	margin-bottom: 3%;
 }
 
 .center_box {
-	height: 100%;
+	height: 80%;
+
+
 	background-color: lightgrey;
 	border: black;
-	margin-left: 8%
+	margin-right: 3%
+}
+
+.center_box_title {
+		text-align: center;
 }
