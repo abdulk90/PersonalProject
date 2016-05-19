@@ -31,7 +31,11 @@
            <%  @events.each do |event| %>
               <div class="panel panel-default">
                <div class="panel-heading">
+               <% if event.date_time %>
                   <h3 class="panel-title"><%= event.date_time.strftime("%b")  %> <%= event.date_time.strftime("%d")  %> <%= event.date_time.strftime("%Y")  %></h3>
+              <% else %>
+                   <h3 class="panel-title">No time></h3>
+              <% end %>
                 </div>
                 <div class="panel-body">
                   <%= event.name %>

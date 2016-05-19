@@ -6,8 +6,11 @@
 
 		
 		<% @events.each do |event| %>
-
-		<li><%= link_to event.name, event_path(event.id)  %> <%= event.date_time.strftime("%b")  %> <%= event.date_time.strftime("%d")  %> <%= event.date_time.strftime("%Y")  %></li><br>
+			 <% if event.date_time %>
+                  <li><%= link_to event.name, event_path(event.id)  %> <%= event.date_time.strftime("%b")  %> <%= event.date_time.strftime("%d")  %> <%= event.date_time.strftime("%Y")  %></li><br>
+              <% else %>
+                   <li>No Time</li><br>
+              <% end %>
 		<% end %>
 
 
