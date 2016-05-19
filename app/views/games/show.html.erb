@@ -2,6 +2,6 @@
 	
 	<h1><%= @game.name  %></h1>
 
-	<%= link_to "Join this game", join_game_path(@game.id, current_user.user_profile.team.id)  %>
+	<%= link_to "Join this game", join_game_path(@game.id, current_user.user_profile.team_id)  %>
 
 </div>
