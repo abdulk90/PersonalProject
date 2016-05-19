@@ -1,14 +1,16 @@
 
-
+<body class="event_background">
+<div class="title_box"><h1 class"center ">Upcoming Events:</h1></div>
 <div class="jumbotron col-xs-12 col-sm-offset- col-sm-5">
-	<ul class="list-unstyled centered">
-	<div>
+	<ul class="list centered">
+
 		
 		<% @events.each do |event| %>
 
-		<li><%= link_to event.name, event_path(event.id)  %></li>
+		<li><%= link_to event.name, event_path(event.id)  %> <%= event.date_time.strftime("%b")  %> <%= event.date_time.strftime("%d")  %> <%= event.date_time.strftime("%Y")  %></li><br>
 		<% end %>
-	</div>
+
 
 	</ul>
 </div>
+</body>
