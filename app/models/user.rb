@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 	has_one :user_profile
-	after_save :generate_profile
+	after_create :generate_profile
 
 	def generate_profile
 		new_user_profile = UserProfile.create(:user_id => self.id, :name => "CHANGE ME!")
