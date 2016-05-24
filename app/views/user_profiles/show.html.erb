@@ -15,8 +15,10 @@
           <div class="media-body">
           <h1 class="media-heading"> Welcome <%= @user_profile.name   %> ! </h1>
           <h2>Phone Number on recond: <%= @user_profile.number  %></h2>
+          <h2>Current Team: <%= @user_profile.team.name  %></h2>
           <h5>About me: <%= @user_profile.description  %></h5>
-          <p><%= link_to "Edit Profile", edit_user_profile_path(@user_profile.id)  %></p>    
+          <p><%= link_to "Edit Profile", edit_user_profile_path(@user_profile.id)  %></p>
+
           </div>
 
       <% else %>
